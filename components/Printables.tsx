@@ -8,7 +8,7 @@ export default function Printables() {
         Les modèles sont disponibles sur Printables.
       </h2>
       <p className="text-[#8C8A82] text-sm leading-relaxed max-w-sm mx-auto mb-9">
-        Fichiers STL gratuits, instructions d'assemblage incluses. Si t'imprimes un truc, envoie une photo.
+        Les fichiers STL sont gratuits pour quiconque souhaite les imprimer. N'hésitez pas à me contacter si vous avez des questions ou besoin d'aide pour l'impression !
       </p>
       <a
         href="https://www.printables.com"
