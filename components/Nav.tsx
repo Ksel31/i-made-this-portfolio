@@ -5,7 +5,7 @@ export default function Nav() {
         <img src="/logo.png" alt="Logo" className="h-8 w-auto" />
       </a>
       <div className="flex gap-6 items-center">
-        <a href="#projets" className="text-white/70 text-xs font-semibold uppercase tracking-widest hover:text-white transition-colors">
+        <a href="#printables" className="text-white/70 text-xs font-semibold uppercase tracking-widest hover:text-white transition-colors">
           Fichiers STL
         </a>
         <a href="https://www.printables.com" target="_blank" className="bg-[#FEFCF6] text-[#0A0A12] text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wide hover:bg-[#4AF0A0] transition-colors">
