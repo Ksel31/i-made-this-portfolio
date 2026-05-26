@@ -4,17 +4,6 @@ import { useEffect, useRef, useState } from 'react'
 
 const projects = [
   {
-    id: 'pinas',
-    index: '01 / 02',
-    title: 'PiNAS\nTHINGY.',
-    hook: "Projet de NAS maison que j'ai réalisé pour ne plus avoir à dépendre de solutions propriétaires pour stocker mes données, et aussi parce que j'avais envie de me faire un petit serveur multimédia pour mon salon.",
-    desc: "Conçu pour le stack Raspberry Pi 5 + Geekworm X1005 dual NVMe. Le boitier est modélisé dans Solidworks.",
-    tags: ['En cours', 'SolidWorks', 'Blender', 'FDM'],
-    specs: ['Pi 5 + X1005', 'Dual NVMe', 'OMV + Docker', 'Jellyfin', 'FDM PLA'],
-    image: '/renders/pinas.jpg',
-    href: '/pinas',
-  },
-  {
     id: 'thermo',
     index: '02 / 02',
     title: 'THERMO\nTHINGY.',
@@ -24,6 +13,17 @@ const projects = [
     specs: ['ESP32-C3', 'DHT22', '1.69" IPS', 'ESPHome', 'Home Assistant'],
     image: '/renders/thermo.jpg',
     href: '/thermothingy',
+  }, 
+  {
+    id: 'pinas',
+    index: '01 / 02',
+    title: 'PiNAS\nTHINGY.',
+    hook: "Projet de NAS maison que j'ai réalisé pour ne plus avoir à dépendre de solutions propriétaires pour stocker mes données, et aussi parce que j'avais envie de me faire un petit serveur multimédia pour mon salon.",
+    desc: "Conçu pour le stack Raspberry Pi 5 + Geekworm X1005 dual NVMe. Le boitier est modélisé dans Solidworks.",
+    tags: ['En cours', 'SolidWorks', 'Blender', 'FDM'],
+    specs: ['Pi 5 + X1005', 'Dual NVMe', 'OMV + Docker', 'Jellyfin', 'FDM PLA'],
+    image: '/renders/pinas.jpg',
+    href: '/pinas',
   },
 ]
 
