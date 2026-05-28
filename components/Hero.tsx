@@ -31,7 +31,7 @@ export default function Hero() {
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: "url('/renders/hero.jpg')" }}
       />
-
+      <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-black/95" />
       {/* HAUT — titre mobile uniquement */}
       <div className="relative z-10 max-w-[1400px] mx-auto w-full px-8 pt-20 md:hidden">
         <h1 className="text-[72px] font-bold leading-none tracking-[-3px] text-white">

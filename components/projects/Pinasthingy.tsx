@@ -4,7 +4,7 @@ export default function Pinas() {
   return (
     <>
       {/* HERO */}
-      <section id="pinasthingy" className="relative h-screen overflow-hidden flex flex-col justify-end">
+      <section id="pinasthingy" className="sticky top-0 relative h-screen overflow-hidden flex flex-col justify-end z-0">
         <div className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/renders/pinas.jpg')" }} />
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/94" />
@@ -31,7 +31,7 @@ export default function Pinas() {
       </section>
 
       {/* CONTENU */}
-      <div className="bg-[#F5F0E8]">
+      <div className="relative z-10 bg-[#F5F0E8]">
         <div className="max-w-[960px] w-[92%] mx-auto py-20">
 
           <a href="/" className="inline-flex items-center gap-2 text-[#8C8A82] text-xs font-semibold uppercase tracking-wide mb-12 hover:text-[#0A0A12] transition-colors">

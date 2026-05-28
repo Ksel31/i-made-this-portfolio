@@ -7,8 +7,12 @@ export default function Projects() {
   return (
     <main className="bg-[#F5F0E8]">
       <Nav />
-      <Thermothingy />
-      <Pinasthingy />
+      <div className="relative">
+        <Thermothingy />
+      </div>
+      <div className="relative -mt-screen">
+        <Pinasthingy />
+      </div>
       <Footer />
     </main>
   )
