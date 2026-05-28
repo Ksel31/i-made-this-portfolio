@@ -41,7 +41,7 @@ export default function Thermothingy() {
         </a>
 
         {/* ARTICLE */}
-        <div className="max-w-[640px]">
+        <div>
           <ThermothingyContent />
         </div>
 
