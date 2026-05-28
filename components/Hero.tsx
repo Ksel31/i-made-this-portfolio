@@ -31,13 +31,20 @@ export default function Hero() {
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: "url('/renders/hero.jpg')" }}
       />
+
+      {/* HAUT — titre mobile uniquement */}
+      <div className="relative z-10 max-w-[1400px] mx-auto w-full px-8 pt-20 md:hidden">
+        <h1 className="text-[72px] font-bold leading-none tracking-[-3px] text-white">
+          I made this!
+        </h1>
+      </div>
     
       {/* BAS — desktop complet */}
       <div className="relative z-10 max-w-[1400px] mx-auto w-full px-8 pb-14 hidden md:block">
-        <h1 className="text-[96px] font-bold leading-none tracking-[-3px] text-white mb-5">
+        <h1 className="text-[clamp(48px,8vw,180px)] font-bold leading-none tracking-[-3px] text-white mb-5">
           I made this!
         </h1>
-        <p className="text-white/55 text-sm leading-relaxed max-w-[380px] mb-8">
+        <p className="text-white/80 text-sm leading-relaxed max-w-[380px] mb-8">
           Ce portfolio a vocation de montrer mes projets DIY que je réalise sur mon temps libre. Bonne visite !
         </p>
         <div className="flex gap-3">
@@ -52,7 +59,7 @@ export default function Hero() {
     
       {/* BAS — boutons mobile uniquement */}
       <div className="relative z-10 max-w-[1400px] mx-auto w-full px-8 pb-10 md:hidden">
-        <p className="text-white/55 text-sm leading-relaxed mb-6">
+        <p className="text-white/80 text-sm leading-relaxed mb-6">
           Ce portfolio a vocation de montrer mes projets DIY que je réalise sur mon temps libre. Bonne visite !
         </p>
         <div className="flex gap-3">

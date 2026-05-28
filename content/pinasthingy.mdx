@@ -1,0 +1,35 @@
+# LE CONCEPT
+## What's this ?
+Je voulais apprendre et expérimenter en créant un objet électronique utile et à mon goût, le tout en me faisant plaisir sur le design.
+Du coup l'idée c'était de faire un simple capteur de température et d'humidité ambiant qui affiche les données en temps réel sur un écran IPS intégré.
+
+Il se connecte en WiFi et remonte les données dans Home Assistant automatiquement.
+
+# HARDWARE
+## Les composants.
+Le cerveau c'est un ESP32-C3 supermini, WiFi intégré, largement suffisant pour la tâche. Le capteur DHT22 relève température et humidité toutes les quelques secondes. L'écran 1.69" IPS affiche tout ça directement sur l'écran.
+
+L'alimentation se fait en USB-C. 
+
+<Img src="/images/exploded-view.svg" alt="Vue éclatée" />
+
+# ENCLOSURE
+## Le boîtier.
+
+Tout a été modélisé dans SolidWorks (après quelques croquis de recherches bien-entendu). Le DHT22 est exposé en façade pour une lecture précise, l'écran est encadré par le boîtier supérieur, et le tout s'assemble avec des vis M2 et M3.
+
+Imprimé en PLA avec ma vaillante Ender 3 Pro. Il aura fallu quelques itérations pour arriver au résultat final.
+
+<ImageGrid>
+  <Img src="/images/croquis-1.jpg" alt="Croquis 1" />
+  <Img src="/images/croquis-2.jpg" alt="Croquis 2" />
+</ImageGrid>
+
+<Img src="/images/sw_screenshot.jpg" alt="SolidWorks" />
+
+# FIRMWARE
+## C++ & MQTT.
+
+Le firmware est écrit en C++ avec le framework Arduino. La lib DHT gère la lecture du capteur, Arduino_GFX et Adafruit_GFX s'occupent de l'affichage sur l'écran IPS, et PubSubClient publie les données en MQTT vers un broker Mosquitto.
+
+Home Assistant se connecte au broker et récupère les valeurs automatiquement. ArduinoOTA permet de flasher le firmware en WiFi sans brancher de câble pour éviter de devoir brancher un pc à chaque correction.

@@ -1,6 +1,6 @@
 export default function Nav() {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-5">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-5 mix-blend-difference">
       <a href="/">
         <img src="/logo.png" alt="Logo" className="h-8 w-auto" />
       </a>

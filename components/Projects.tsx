@@ -12,7 +12,7 @@ const projects = [
     tags: ['Terminé', 'ESP32', 'ESPHome', 'SolidWorks'],
     specs: ['ESP32-C3', 'DHT22', '1.69" IPS', 'ESPHome', 'Home Assistant'],
     image: '/renders/thermo.jpg',
-    href: '/thermothingy',
+    href: '/projects#thermothingy',
   }, 
   {
     id: 'pinas',
@@ -23,7 +23,7 @@ const projects = [
     tags: ['En cours', 'SolidWorks', 'Blender', 'FDM'],
     specs: ['Pi 5 + X1005', 'Dual NVMe', 'OMV + Docker', 'Jellyfin', 'FDM PLA'],
     image: '/renders/pinas.jpg',
-    href: '/pinas',
+    href: '/projects#pinasthingy',
   },
 ]
 
