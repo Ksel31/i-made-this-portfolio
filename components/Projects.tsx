@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react'
 const projects = [
   {
     id: 'thermo',
-    index: '02 / 02',
+    index: '01 / 02',
     title: 'THERMO\nTHINGY.',
     hook: "Premier projet de la série, un thermomètre/hygromètre ambiant avec écran. Parce que c'était un projet à ma portée pour me lancer, et que j'avais envie de me faire un petit dashboard météo sur mon bureau.",
     desc: "Thermomètre/hygromètre ambiant avec écran 1.69\" IPS en temps réel. Modélisé dans SolidWorks. Le tout propulsé par un ESP32-C3 avec un capteur DHT22, les données sont envoyées à Home Assistant via Wifi et MQTT.",
@@ -16,7 +16,7 @@ const projects = [
   }, 
   {
     id: 'pinas',
-    index: '01 / 02',
+    index: '02 / 02',
     title: 'PiNAS\nTHINGY.',
     hook: "Projet de NAS maison que j'ai réalisé pour ne plus avoir à dépendre de solutions propriétaires pour stocker mes données, et aussi parce que j'avais envie de me faire un petit serveur multimédia pour mon salon.",
     desc: "Conçu pour le stack Raspberry Pi 5 + Geekworm X1005 dual NVMe. Le boitier est modélisé dans Solidworks.",

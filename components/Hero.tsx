@@ -1,17 +1,36 @@
 'use client'
 
+import { useEffect, useRef } from 'react'
+
 export default function Hero() {
+  const bgRef = useRef<HTMLDivElement>(null)
+  const targetScale = useRef(1.05)
+  const currentScale = useRef(1.05)
+
+  useEffect(() => {
+    const hero = document.querySelector('.hero-section') as HTMLElement
+    if (!hero) return
+
+    hero.addEventListener('mouseenter', () => { targetScale.current = 1.09 })
+    hero.addEventListener('mouseleave', () => { targetScale.current = 1.05 })
+
+    const animate = () => {
+      currentScale.current += (targetScale.current - currentScale.current) * 0.05
+      if (bgRef.current) {
+        bgRef.current.style.transform = `scale(${currentScale.current})`
+      }
+      requestAnimationFrame(animate)
+    }
+    animate()
+  }, [])
+
   return (
-    <section className="relative h-screen overflow-hidden flex flex-col justify-between md:justify-end">
-      <div className="absolute inset-0 bg-cover bg-center scale-105" style={{ backgroundImage: "url('/renders/hero.jpg')" }} />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/90" />
-    
-      {/* HAUT — titre mobile uniquement */}
-      <div className="relative z-10 max-w-[1400px] mx-auto w-full px-8 pt-24 md:hidden">
-        <h1 className="text-[72px] font-bold leading-none tracking-[-3px] text-white">
-          I made this!
-        </h1>
-      </div>
+    <section className="hero-section relative h-screen overflow-hidden flex flex-col justify-between md:justify-end">
+      <div
+        ref={bgRef}
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: "url('/renders/hero.jpg')" }}
+      />
     
       {/* BAS — desktop complet */}
       <div className="relative z-10 max-w-[1400px] mx-auto w-full px-8 pb-14 hidden md:block">

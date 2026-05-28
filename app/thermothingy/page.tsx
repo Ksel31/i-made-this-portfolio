@@ -8,7 +8,7 @@ export default function Thermothingy() {
 
       {/* HERO */}
       <section className="relative h-screen overflow-hidden flex flex-col justify-end">
-        <div className="absolute inset-0 bg-cover bg-center scale-105"
+        <div className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/renders/thermo-orange-debout.jpg')" }} />
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/94" />
         <div className="relative z-10 max-w-[1400px] w-full mx-auto px-8 pb-14 grid grid-cols-1 md:grid-cols-2 gap-8 items-end">
@@ -22,78 +22,90 @@ export default function Thermothingy() {
               ))}
             </div>
           </div>
+          <div className="flex flex-col md:items-end gap-3">
+            <p className="text-white font-semibold text-lg leading-relaxed md:text-right max-w-sm">
+              Un thermomètre/hygromètre WiFi avec écran, fait maison de A à Z.
+            </p>
+            <p className="text-white/50 text-sm leading-relaxed md:text-right max-w-sm">
+              ESP32-C3, DHT22, écran 1.69" IPS, boîtier imprimé en 3D, firmware ESPHome et intégration Home Assistant native.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* CONTENT */}
       <div className="max-w-[960px] w-[92%] mx-auto py-20">
 
         <a href="/" className="inline-flex items-center gap-2 text-[#8C8A82] text-xs font-semibold uppercase tracking-wide mb-12 hover:text-[#0A0A12] transition-colors">
           ← Retour aux projets
         </a>
 
-        {/* ORIGINE */}
+        {/* LE CONCEPT */}
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-5">
-            <span className="text-[10px] font-bold uppercase tracking-[2px] text-[#8C8A82]">Origine</span>
+            <span className="text-[10px] font-bold uppercase tracking-[2px] text-[#8C8A82]">Le concept</span>
             <div className="flex-1 h-px bg-black/8" />
           </div>
-          <h2 className="text-[clamp(24px,3.5vw,38px)] font-bold tracking-[-1.5px] mb-5">Long story short.</h2>
+          <h2 className="text-[clamp(24px,3.5vw,38px)] font-bold tracking-[-1.5px] mb-5">What's this ?</h2>
           <p className="text-[15px] leading-[1.8] max-w-[640px] mb-4">
-            J'avais regardé pendant des années une chaîne YouTube appelée Abrège, en admirant le travail, sans jamais trouver le courage de me lancer. J'avais quelques compétences, mais l'électronique me semblait être le territoire de quelqu'un d'autre.
+            Un capteur de température et d'humidité ambiant qui affiche les données en temps réel sur un écran IPS intégré. Il se connecte en WiFi et remonte les données dans Home Assistant automatiquement.
           </p>
-          <p className="text-[15px] leading-[1.8] max-w-[640px] mb-4">
-            Puis un jour j'ai installé Home Assistant chez moi. Et après un moment, acheter des capteurs tout faits a commencé à me sembler paresseux. Alors j'ai commencé à lire des trucs sur l'ESP32.
-          </p>
-          <p className="text-[15px] leading-[1.8] max-w-[640px] italic text-[#8C8A82]">
-            Il me fallait un premier projet. Quelque chose d'assez simple pour ne pas tuer ma motivation dès le jour un. Un capteur de température, ça semblait bien.
+          <p className="text-[15px] leading-[1.8] max-w-[640px]">
+            L'idée c'était simple : avoir un objet posé sur le bureau qui donne la temp et l'humidité d'un coup d'œil, sans sortir le téléphone. Et que ce soit quelque chose de fait maison, pas un truc acheté sur Amazon.
           </p>
         </div>
 
-        {/* OMG IT WORKS */}
+        {/* HARDWARE */}
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-5">
-            <span className="text-[10px] font-bold uppercase tracking-[2px] text-[#8C8A82]">Étape 1</span>
+            <span className="text-[10px] font-bold uppercase tracking-[2px] text-[#8C8A82]">Hardware</span>
             <div className="flex-1 h-px bg-black/8" />
           </div>
-          <h2 className="text-[clamp(24px,3.5vw,38px)] font-bold tracking-[-1.5px] mb-5">"YES, CA MARCHE !"</h2>
+          <h2 className="text-[clamp(24px,3.5vw,38px)] font-bold tracking-[-1.5px] mb-5">Les composants.</h2>
+          <p className="text-[15px] leading-[1.8] max-w-[640px] mb-4">
+            Le cerveau c'est un ESP32-C3 supermini, WiFi intégré, largement suffisant pour la tâche. Le capteur DHT22 relève température et humidité toutes les quelques secondes. L'écran 1.69" IPS affiche tout ça directement sur l'écran.
+          </p>
           <p className="text-[15px] leading-[1.8] max-w-[640px]">
-            J'ai acheté un ESP32-C6 et un DHT22, j'ai essayé de faire fonctionner le truc et d'afficher la temp et l'humidité de la pièce. Et mon premier projet Arduino a fonctionné.
+            L'alimentation se fait en USB-C. Pas de batterie, c'est un objet de bureau.
           </p>
         </div>
 
         {/* IMAGE */}
-        <div className="rounded-2xl overflow-hidden mb-16 bg-[#0A0A12]">
-          <img src="/renders/thermo-esp-naked.jpg" alt="ThermotHINGY" className="w-full object-cover" style={{ aspectRatio: '16/9', objectPosition: 'center 30%' }} />
+        <div className="mb-16">
+          <img src="/images/exploded-view.svg" alt="Vue éclatée ThermotHINGY" className="w-full" />
         </div>
 
-        {/* POURQUOI S'ARRÊTER */}
+        {/* ENCLOSURE */}
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-5">
-            <span className="text-[10px] font-bold uppercase tracking-[2px] text-[#8C8A82]">Étape 2</span>
+            <span className="text-[10px] font-bold uppercase tracking-[2px] text-[#8C8A82]">Enclosure</span>
             <div className="flex-1 h-px bg-black/8" />
           </div>
-          <h2 className="text-[clamp(24px,3.5vw,38px)] font-bold tracking-[-1.5px] mb-5">OK, et après?</h2>
+          <h2 className="text-[clamp(24px,3.5vw,38px)] font-bold tracking-[-1.5px] mb-5">Le boîtier.</h2>
           <p className="text-[15px] leading-[1.8] max-w-[640px] mb-4">
-            Maintenant j'avais un thermomètre peu pratique avec des câbles qui pendouillent, et je devais regarder mon téléphone pour avoir les infos. Alors j'ai pensé : "après tout, pourquoi pas ? Pourquoi ne pas concevoir et construire MON PROPRE thermomètre avec un écran et tout ?"
+            Modélisé dans SolidWorks avec les cotes exactes de chaque composant. Le DHT22 est exposé en façade pour une lecture précise, l'écran est encadré par le boîtier supérieur, et le tout s'assemble avec des vis M2.
           </p>
           <p className="text-[15px] leading-[1.8] max-w-[640px]">
-            J'ai commencé à chercher des inspirations, à dessiner un truc dans ma tête et sur papier. Et je me suis retrouvé avec quelque chose.
+            Imprimé en PLA sur une Ender 3 Pro. Plusieurs itérations pour affiner les tolérances — la première version serrait trop, la deuxième avait trop de jeu. La troisième était la bonne.
           </p>
         </div>
 
-        {/* CONCEPTION */}
+        {/* IMAGE */}
+        <div className="rounded-2xl overflow-hidden mb-16">
+          <img src="/images/sw_screenshot.jpg" alt="ThermotHINGY" className="w-full object-cover" style={{ aspectRatio: '16/9', objectPosition: 'center 50%' }} />
+        </div>
+
+        {/* FIRMWARE */}
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-5">
-            <span className="text-[10px] font-bold uppercase tracking-[2px] text-[#8C8A82]">Étape 3</span>
+            <span className="text-[10px] font-bold uppercase tracking-[2px] text-[#8C8A82]">Firmware</span>
             <div className="flex-1 h-px bg-black/8" />
           </div>
-          <h2 className="text-[clamp(24px,3.5vw,38px)] font-bold tracking-[-1.5px] mb-5">SolidWorks + patience.</h2>
+          <h2 className="text-[clamp(24px,3.5vw,38px)] font-bold tracking-[-1.5px] mb-5">C++ & MQTT.</h2>
           <p className="text-[15px] leading-[1.8] max-w-[640px] mb-4">
-            Modélisation dans SolidWorks. Chaque composant mesuré, chaque tolérance d'impression calculée. Le boîtier accueille l'ESP32-C3, l'écran 1.69" IPS, le DHT22 en façade et la connectique USB-C.
+            Le firmware est écrit en C++ avec le framework Arduino. La lib DHT gère la lecture du capteur, Arduino_GFX et Adafruit_GFX s'occupent de l'affichage sur l'écran IPS, et PubSubClient publie les données en MQTT vers un broker Mosquitto.
           </p>
           <p className="text-[15px] leading-[1.8] max-w-[640px]">
-            Plusieurs itérations d'impression sur l'Ender 3 Pro avant d'arriver à quelque chose de propre. L'imprimante a eu des opinions sur le sujet, comme d'habitude.
+            Home Assistant se connecte au broker et récupère les valeurs automatiquement. ArduinoOTA permet de flasher le firmware en WiFi.
           </p>
         </div>
 
@@ -102,11 +114,11 @@ export default function Thermothingy() {
           {[
             {
               title: 'Hardware',
-              items: [['MCU', 'ESP32-C3'], ['Capteur', 'DHT22'], ['Écran', '1.69" IPS'], ['Alim', 'USB-C 5V']]
+              items: [['MCU', 'ESP32-C3 Supermini'], ['Capteur', 'DHT22'], ['Écran', 'Waveshare 1.69" IPS'], ['Alim', 'USB-C 5V']]
             },
             {
               title: 'Software',
-              items: [['Firmware', 'ESPHome'], ['Intégration', 'Home Assistant'], ['Protocole', 'WiFi / MQTT']]
+              items: [['Firmware', 'Arduino C++'], ['Broker', 'Mosquitto MQTT'], ['Intégration', 'Home Assistant'], ['OTA', 'ArduinoOTA']]
             },
             {
               title: 'Enclosure',
@@ -125,6 +137,11 @@ export default function Thermothingy() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* IMAGE */}
+        <div className="rounded-2xl overflow-hidden mb-16">
+          <img src="/renders/thermo-face-haut.jpg" alt="THERMOTHINGY" className="w-full object-cover" style={{objectPosition: 'center 50%' }} />
         </div>
 
         {/* PROJET SUIVANT */}
