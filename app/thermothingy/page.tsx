@@ -1,5 +1,6 @@
 import Nav from '../../components/Nav'
 import Footer from '../../components/Footer'
+import ThermothingyContent from '../../content/thermothingy.mdx'
 
 export default function Thermothingy() {
   return (
@@ -39,74 +40,9 @@ export default function Thermothingy() {
           ← Retour aux projets
         </a>
 
-        {/* LE CONCEPT */}
-        <div className="mb-16">
-          <div className="flex items-center gap-3 mb-5">
-            <span className="text-[10px] font-bold uppercase tracking-[2px] text-[#8C8A82]">Le concept</span>
-            <div className="flex-1 h-px bg-black/8" />
-          </div>
-          <h2 className="text-[clamp(24px,3.5vw,38px)] font-bold tracking-[-1.5px] mb-5">What's this ?</h2>
-          <p className="text-[15px] leading-[1.8] max-w-[640px] mb-4">
-            Un capteur de température et d'humidité ambiant qui affiche les données en temps réel sur un écran IPS intégré. Il se connecte en WiFi et remonte les données dans Home Assistant automatiquement.
-          </p>
-          <p className="text-[15px] leading-[1.8] max-w-[640px]">
-            L'idée c'était simple : avoir un objet posé sur le bureau qui donne la temp et l'humidité d'un coup d'œil, sans sortir le téléphone. Et que ce soit quelque chose de fait maison, pas un truc acheté sur Amazon.
-          </p>
-        </div>
-
-        {/* HARDWARE */}
-        <div className="mb-16">
-          <div className="flex items-center gap-3 mb-5">
-            <span className="text-[10px] font-bold uppercase tracking-[2px] text-[#8C8A82]">Hardware</span>
-            <div className="flex-1 h-px bg-black/8" />
-          </div>
-          <h2 className="text-[clamp(24px,3.5vw,38px)] font-bold tracking-[-1.5px] mb-5">Les composants.</h2>
-          <p className="text-[15px] leading-[1.8] max-w-[640px] mb-4">
-            Le cerveau c'est un ESP32-C3 supermini, WiFi intégré, largement suffisant pour la tâche. Le capteur DHT22 relève température et humidité toutes les quelques secondes. L'écran 1.69" IPS affiche tout ça directement sur l'écran.
-          </p>
-          <p className="text-[15px] leading-[1.8] max-w-[640px]">
-            L'alimentation se fait en USB-C. Pas de batterie, c'est un objet de bureau.
-          </p>
-        </div>
-
-        {/* IMAGE */}
-        <div className="mb-16">
-          <img src="/images/exploded-view.svg" alt="Vue éclatée ThermotHINGY" className="w-full" />
-        </div>
-
-        {/* ENCLOSURE */}
-        <div className="mb-16">
-          <div className="flex items-center gap-3 mb-5">
-            <span className="text-[10px] font-bold uppercase tracking-[2px] text-[#8C8A82]">Enclosure</span>
-            <div className="flex-1 h-px bg-black/8" />
-          </div>
-          <h2 className="text-[clamp(24px,3.5vw,38px)] font-bold tracking-[-1.5px] mb-5">Le boîtier.</h2>
-          <p className="text-[15px] leading-[1.8] max-w-[640px] mb-4">
-            Modélisé dans SolidWorks avec les cotes exactes de chaque composant. Le DHT22 est exposé en façade pour une lecture précise, l'écran est encadré par le boîtier supérieur, et le tout s'assemble avec des vis M2.
-          </p>
-          <p className="text-[15px] leading-[1.8] max-w-[640px]">
-            Imprimé en PLA sur une Ender 3 Pro. Plusieurs itérations pour affiner les tolérances — la première version serrait trop, la deuxième avait trop de jeu. La troisième était la bonne.
-          </p>
-        </div>
-
-        {/* IMAGE */}
-        <div className="rounded-2xl overflow-hidden mb-16">
-          <img src="/images/sw_screenshot.jpg" alt="ThermotHINGY" className="w-full object-cover" style={{ aspectRatio: '16/9', objectPosition: 'center 50%' }} />
-        </div>
-
-        {/* FIRMWARE */}
-        <div className="mb-16">
-          <div className="flex items-center gap-3 mb-5">
-            <span className="text-[10px] font-bold uppercase tracking-[2px] text-[#8C8A82]">Firmware</span>
-            <div className="flex-1 h-px bg-black/8" />
-          </div>
-          <h2 className="text-[clamp(24px,3.5vw,38px)] font-bold tracking-[-1.5px] mb-5">C++ & MQTT.</h2>
-          <p className="text-[15px] leading-[1.8] max-w-[640px] mb-4">
-            Le firmware est écrit en C++ avec le framework Arduino. La lib DHT gère la lecture du capteur, Arduino_GFX et Adafruit_GFX s'occupent de l'affichage sur l'écran IPS, et PubSubClient publie les données en MQTT vers un broker Mosquitto.
-          </p>
-          <p className="text-[15px] leading-[1.8] max-w-[640px]">
-            Home Assistant se connecte au broker et récupère les valeurs automatiquement. ArduinoOTA permet de flasher le firmware en WiFi.
-          </p>
+        {/* ARTICLE */}
+        <div className="max-w-[640px]">
+          <ThermothingyContent />
         </div>
 
         {/* SPECS */}
