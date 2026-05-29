@@ -1,5 +1,6 @@
 import { Space_Grotesk } from 'next/font/google'
 import './globals.css'
+import BackToTop from '../components/BackToTop'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -15,6 +16,7 @@ export default function RootLayout({
     <html lang="fr">
       <body className={spaceGrotesk.className}>
         {children}
+        <BackToTop />
       </body>
     </html>
   )

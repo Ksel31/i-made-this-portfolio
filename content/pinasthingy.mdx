@@ -1,35 +1,35 @@
 # LE CONCEPT
 ## What's this ?
-Je voulais apprendre et expérimenter en créant un objet électronique utile et à mon goût, le tout en me faisant plaisir sur le design.
-Du coup l'idée c'était de faire un simple capteur de température et d'humidité ambiant qui affiche les données en temps réel sur un écran IPS intégré.
-
-Il se connecte en WiFi et remonte les données dans Home Assistant automatiquement.
+Lassé de devoir payer des abonnements Cloud et Spotify consorts, j'ai décidé de monter mon propre serveur maison pour stocker mes fichiers de travail et multimédia, et de lui faire un beau boitier custom !
+Je me suis basé sur un article très intéressant et vraiment bien expliqué sur [f1nqp.fr](https://www.f1nqp.fr/articles.php?lng=fr&pg=1157&mnuid=1031&tconfig=0) pour le montage et choix des composants, pour le design du boitier je me suis servi de SolidWorks et d'un crayon.
 
 # HARDWARE
 ## Les composants.
-Le cerveau c'est un ESP32-C3 supermini, WiFi intégré, largement suffisant pour la tâche. Le capteur DHT22 relève température et humidité toutes les quelques secondes. L'écran 1.69" IPS affiche tout ça directement sur l'écran.
+Le cœur du système c'est un Raspberry Pi 5 surmonté d'un HAT Geekworm X1005 qui accueille deux SSD NVMe M.2.
 
-L'alimentation se fait en USB-C. 
+Le tout est monté dans un boîtier imprimé en PLA, maintenu ensemble par des tiges en bois de 6mm qui traversent la structure de part en part. Les façades avant et arrière sont fixées avec des vis M2. 
+Un ESP32 Supermini se cache à l'intérieur et gère uniquement l'affichage des LEDs en façade. Il est intégré à Home Assistant via ESPHome, ce qui permet de piloter les couleurs selon l'état du serveur.
 
-<Img src="/images/exploded-view.svg" alt="Vue éclatée" />
+L'alimentation du Pi se fait en USB-C. 
+
+<Img src="/images/pinasthingy-exploded-view.svg" alt="Vue éclatée" />
 
 # ENCLOSURE
 ## Le boîtier.
 
-Tout a été modélisé dans SolidWorks (après quelques croquis de recherches bien-entendu). Le DHT22 est exposé en façade pour une lecture précise, l'écran est encadré par le boîtier supérieur, et le tout s'assemble avec des vis M2 et M3.
-
-Imprimé en PLA avec ma vaillante Ender 3 Pro. Il aura fallu quelques itérations pour arriver au résultat final.
+Modélisé dans SolidWorks, imprimé en PLA sur l'Ender 3 Pro. Pour la structure, j'ai utilisé deux tiges en bois de 6mm qui traversent le boîtier pour maintenir le tout ensemble. Les façades se fixent avec des vis M2, je peux facilement démonter l'ensemble si besoin. 
+Les leds sont encoffrées dans une pièce en PLA blanc avec une façade "fine" pour diffuser la lumière.
 
 <ImageGrid>
-  <Img src="/images/croquis-1.jpg" alt="Croquis 1" />
-  <Img src="/images/croquis-2.jpg" alt="Croquis 2" />
+  <Img src="/images/pinasthingy-croquis.jpg" alt="Croquis 1" />
+  <Img src="/images/pinasthingy-raspberrypi.jpg" alt="Croquis 2" />
 </ImageGrid>
 
-<Img src="/images/sw_screenshot.jpg" alt="SolidWorks" />
+<Img src="/images/pinasthingy-sw_screenshot.jpg" alt="SolidWorks" />
 
 # FIRMWARE
-## C++ & MQTT.
+## OpenMediaVault + Docker.
 
-Le firmware est écrit en C++ avec le framework Arduino. La lib DHT gère la lecture du capteur, Arduino_GFX et Adafruit_GFX s'occupent de l'affichage sur l'écran IPS, et PubSubClient publie les données en MQTT vers un broker Mosquitto.
+Le Pi tourne sous Pi OS Lite 64-bit et OpenMediaVault gère les disques, les partages réseau et les snapshots.
 
-Home Assistant se connecte au broker et récupère les valeurs automatiquement. ArduinoOTA permet de flasher le firmware en WiFi sans brancher de câble pour éviter de devoir brancher un pc à chaque correction.
+Les services tournent tous en containers Docker, gérés via Portainer. Nextcloud pour les fichiers, Jellyfin pour les films et séries, Navidrome pour la musique. Tailscale pour accéder à tout quand je suis à l'extérieur.

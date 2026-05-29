@@ -24,7 +24,7 @@ export default function Pinas() {
               Un serveur NAS DIY fait maison.
             </p>
             <p className="text-white/50 text-sm leading-relaxed md:text-right max-w-sm">
-              Raspberry Pi 5, dual NVMe, OpenMediaVault, Docker, et un boîtier imprimé en 3D qui fait tourner les têtes.
+              Raspberry Pi 5, dual NVMe, OpenMediaVault, Docker, et un boîtier imprimé en 3D.
             </p>
           </div>
         </div>
@@ -48,7 +48,7 @@ export default function Pinas() {
             {[
               {
                 title: 'Hardware',
-                items: [['SBC', 'Raspberry Pi 5 4GB'], ['HAT', 'Geekworm X1005'], ['Stockage', 'Crucial P5 Plus 1To ×2'], ['Refroid.', 'Active Cooler Pi 5']]
+                items: [['SBC', 'Raspberry Pi 5 4GB'], ['HAT', 'Geekworm X1005'], ['Stockage', 'Crucial P5 Plus 1To ×2'], ['Refroidissement', 'Active Cooler Pi 5']]
               },
               {
                 title: 'Software',
@@ -71,6 +71,11 @@ export default function Pinas() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* IMAGE */}
+          <div className="rounded-2xl overflow-hidden mb-16">
+            <img src="/renders/pinasthingy-2.jpg" alt="THERMOTHINGY" className="w-full object-cover" style={{ objectPosition: 'center 50%' }} />
           </div>
 
         </div>

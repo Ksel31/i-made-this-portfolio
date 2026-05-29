@@ -36,5 +36,10 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Img: ({ src, alt }: { src: string, alt: string }) => (
       <img src={src} alt={alt} className="w-full object-cover rounded-xl mt-4" />
     ),
+    a: ({ href, children }) => (
+       <a href={href} target="_blank" rel="noopener noreferrer" className="underline hover:text-[#0A0A12] text-[#8C8A82] transition-colors">
+         {children}
+       </a>
+    ),
   }
 }
